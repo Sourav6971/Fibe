@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Categorize your article</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="flex items-center justify-center min-h-screen bg-gray-200">
+    <div class="w-full max-w-lg p-6 bg-white shadow-lg rounded-lg">
+        <form action="/submit-article" method="POST">
+            <div class="mb-4 text-2xl font-bold text-blue-800">Enter your news article here:</div>
+            <textarea 
+                name="article" 
+                class="w-full h-48 p-4 border border-gray-300 rounded-lg resize-none focus:outline-none focus:ring-2 focus:ring-blue-500" 
+                placeholder="Type or paste your paragraph here..."></textarea>
+                {% if prediction %}
+                <h2 class="text-xl text-green-600">Category: {{ prediction }}</h2>
+                {% endif %}
+            
+            <button type="submit" class="w-full px-4 py-2 mt-4 text-white bg-blue-500 rounded-lg hover:bg-blue-600">Submit</button>
+        </form>
+    </div>
+</body>
+</html>
